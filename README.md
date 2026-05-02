@@ -2,7 +2,7 @@
 
 MySawah adalah platform yang dirancang untuk meningkatkan produktivitas pertanian melalui integrasi teknologi AI dan Agri-Commerce. Dibangun menggunakan Jetpack Compose, platform ini menghadirkan arsitektur yang rapi dan reaktif untuk memberikan pengalaman pengguna yang lancar.
 
-## Fitur Unggulan
+## Fitur Unggulan (Soon)
 
 ### AI Crop Recommendation
 Sistem cerdas yang merekomendasikan tanaman terbaik untuk lahan Anda. Sebagai implementasi dari machine learning, fitur ini dirancang untuk memberikan hasil yang akurat berdasarkan data lingkungan.
