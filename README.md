@@ -16,7 +16,7 @@ Sistem cerdas yang merekomendasikan tanaman terbaik untuk lahan Anda. Sebagai im
 * **Stock Validation:** Pengurangan stok otomatis saat transaksi berhasil (Status PAID).
 
 ### Transaction History
-* Riwayat pesanan mendetail untuk memantau pengeluaran dan kebutuhan tani.
+* Riwayat pesanan mendetail untuk memantau pengeluaran dan kebutuhan para petani.
 * Status transaksi transparan (Pending/Paid).
 * Format mata uang Rupiah otomatis.
 
