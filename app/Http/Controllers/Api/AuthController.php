@@ -67,7 +67,7 @@ class AuthController extends Controller
         ], 401);
     }
 
-    // Tambahan Wajib untuk Web: Fitur Logout
+    // membuat fungsi logout untuk menghapus session dan token
     public function logout(Request $request)
     {
         Auth::guard('web')->logout();
@@ -81,7 +81,7 @@ class AuthController extends Controller
         ], 200);
     }
 
-    public function me(Request $request)
+    public function me(Request $request) 
     {
         return response()->json([
             'status' => 'success',
@@ -89,7 +89,7 @@ class AuthController extends Controller
         ], 200);
     }
 
-    public function updateProfile(Request $request)
+    public function updateProfile(Request $request) // fungsi untuk memperbarui profil pengguna
     {
         $user = $request->user();
 
@@ -112,7 +112,7 @@ class AuthController extends Controller
         ]);
     }
 
-    public function uploadPhoto(Request $request)
+    public function uploadPhoto(Request $request) // fungsi untuk mengupload foto profil pengguna
     {
         $request->validate([
             'foto_profil' => 'required|image|mimes:jpg,jpeg,png|max:2048'
@@ -138,7 +138,7 @@ class AuthController extends Controller
         ]);
     }
 
-    public function deletePhoto(Request $request)
+    public function deletePhoto(Request $request) // fungsi untuk menghapus foto profil pengguna
     {
         $user = $request->user();
 
@@ -156,7 +156,7 @@ class AuthController extends Controller
         ]);
     }
 
-    public function getPhoto(Request $request)
+    public function getPhoto(Request $request) // fungsi untuk menampilkan foto profil pengguna
     {
         $user = $request->user();
     
