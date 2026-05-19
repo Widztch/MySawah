@@ -12,7 +12,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        $middleware->api(prepend: [
+            \Illuminate\Session\Middleware\StartSession::class, // ini digunakan untuk memulai sesi pada setiap permintaan API
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
