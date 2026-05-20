@@ -12,7 +12,7 @@
 
         <!-- LOGO -->
         <div class="logo">
-          🌿 MySawah
+          🌿 MySawahe
         </div>
 
         <!-- MENU -->
