@@ -41,8 +41,9 @@ import AIMascot from './AIMascot.vue'
 
         <!-- DESC -->
         <p class="ai-description">
-          Tanyakan masalah pertanian anda,
-          AI kami siap memberikan rekomendasi terbaik
+          Berikan data dalam pertanian anda,
+          AI Assistant kami siap memberikan rekomendasi 
+          tanaman utama dan pendamping terbaik untuk lahan Anda.
         </p>
 
         <!-- BUTTON -->
@@ -61,7 +62,8 @@ import AIMascot from './AIMascot.vue'
         <!-- CHAT TOP -->
         <div class="chat-green">
 
-          Hallo AI, Berikut ini adalah data  ?
+          Hallo AI MySawah, Berikut ini adalah data saya:
+          5,2. 0.11, 0.14, 20, 0.056, 22, 76
 
         </div>
 
@@ -69,22 +71,22 @@ import AIMascot from './AIMascot.vue'
         <div class="chat-white">
 
           <p>
-            Kemungkinan kekurangan unsur hara,
-            [Nitrogen]. Coba kamu berikan pupuk
-            urea dengan elemen yang tepat dan
-            pastikan pengairan cukup.
+            Dari beberapa data kandungan, kelembapan, pH dan Curah Hujan yang telah
+            Anda masukkan, Tanaman utama yang direkomendasikan 
+            berdasarkan data tanah Anda adalah kacang merah
           </p>
 
           <div class="chat-list">
 
             <h4>
-              Tindakan selanjutnya:
+              Dan dari hasil rekomendasi tanaman utama, 
+              beberapa tanaman pendamping yang cocok adalah:
             </h4>
 
             <ol>
-              <li>Berikan pupuk urea</li>
-              <li>Pastikan irigasi cukup</li>
-              <li>Cek kondisi hama</li>
+              <li>Jagung</li>
+              <li>Padi</li>
+              <li>Cabai</li>
             </ol>
 
           </div>
