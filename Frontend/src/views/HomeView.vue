@@ -203,10 +203,17 @@
 
 <ProductList />
 
+<!-- ================================= -->
+<!-- AI ASSISTANT -->
+<!-- ================================= -->
+
+<AIChat />
+
   </div>
 
 </template>
 
 <script setup>
 import ProductList from '@/components/product/ProductList.vue'
+import AIChat from '@/components/ai/AIChat.vue'
 </script>

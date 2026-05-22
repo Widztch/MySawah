@@ -44,11 +44,6 @@ defineProps({
 
     </div>
 
-    <!-- CIRCLE -->
-    <div class="product-circle">
-      ↗
-    </div>
-
   </div>
 
 </template>

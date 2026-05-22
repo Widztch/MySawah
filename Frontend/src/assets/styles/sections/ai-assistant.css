@@ -1,3 +1,7 @@
+/* =====================================
+   AI SECTION
+===================================== */
+
 .ai-section {
   max-width: 1280px;
   margin: auto;
@@ -9,4 +13,197 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 80px;
   align-items: center;
+}
+
+/* =====================================
+   LEFT
+===================================== */
+
+.ai-left {
+  position: relative;
+}
+
+.ai-mini-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 30px;
+}
+
+.mini-brand-circle {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 999px;
+
+  background: #5c844c;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+}
+
+.ai-title {
+  font-size: 58px;
+  line-height: 1.1;
+  font-weight: 700;
+
+  color: #222;
+
+  margin-bottom: 24px;
+}
+
+.ai-description {
+  max-width: 450px;
+
+  color: #666;
+  line-height: 1.8;
+
+  margin-bottom: 40px;
+
+  font-size: 16px;
+}
+
+/* =====================================
+   RIGHT
+===================================== */
+
+.ai-right {
+  position: relative;
+  min-height: 400px;
+}
+
+/* =====================================
+   CHAT GREEN
+===================================== */
+
+.chat-green {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 340px;
+
+  background: #d8ebcb;
+
+  border: 1px solid #7c9c6f;
+
+  padding: 22px;
+
+  border-radius: 18px;
+
+  line-height: 1.7;
+
+  color: #333;
+
+  z-index: 5;
+}
+
+/* =====================================
+   CHAT WHITE
+===================================== */
+
+.chat-white {
+  position: absolute;
+
+  top: 120px;
+  left: 180px;
+
+  width: 480px;
+
+  background: white;
+
+  border: 1px solid #d9d9d9;
+
+  border-radius: 20px;
+
+  padding: 28px;
+
+  line-height: 1.8;
+
+  color: #5b5b5b;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+
+  z-index: 4;
+}
+
+.chat-list {
+  margin-top: 20px;
+}
+
+.chat-list h4 {
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.chat-list ol {
+  padding-left: 20px;
+}
+
+/* =====================================
+   AI MASCOT
+===================================== */
+
+.ai-mascot-position {
+  position: absolute;
+
+  left: 20px;
+  bottom: 40px;
+
+  z-index: 3;
+}
+
+/* =====================================
+   MASCOT
+===================================== */
+
+.mascot-wrapper {
+  width: 200px;
+  height: 200px;
+  
+  border-radius: 999px;
+
+  background: #d8ebcb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.mascot-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* =====================================
+   SINGLE FLOATING CIRCLE
+===================================== */
+
+.floating-circle {
+  position: absolute;
+
+  width: 70px;
+  height: 70px;
+
+  border-radius: 999px;
+
+  border: 1px solid #d9d9d9;
+
+  background: white;
+
+  top: 180px;
+  right: 120px;
+
+  z-index: 2;
 }

@@ -6,6 +6,7 @@
 @import './components/product-card.css';
 @import './sections/login.css';
 @import './sections/register.css';
+@import './sections/ai-assistant.css';
 
 body {
   margin: 0;
