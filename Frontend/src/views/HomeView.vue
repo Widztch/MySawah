@@ -209,6 +209,12 @@
 
 <AIChat />
 
+<!-- ================================= -->
+<!-- ABOUT -->
+<!-- ================================= -->
+
+<AboutStats />
+
   </div>
 
 </template>
@@ -216,4 +222,5 @@
 <script setup>
 import ProductList from '@/components/product/ProductList.vue'
 import AIChat from '@/components/ai/AIChat.vue'
+import AboutStats from '@/components/about/AboutStats.vue'
 </script>
