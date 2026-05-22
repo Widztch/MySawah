@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 
-const Name = ref('')
+const fullName = ref('')
 const email = ref('')
 const password = ref('')
 const confirmPassword = ref('')
@@ -18,7 +18,7 @@ const toggleConfirmPassword = () => {
 }
 
 const handleRegister = () => {
-  console.log('Mendaftar dengan:', { nama: Name.value, email: email.value })
+  console.log('Mendaftar dengan:', { nama: fullName.value, email: email.value })
 }
 </script>
 
@@ -29,22 +29,22 @@ const handleRegister = () => {
       <div class="register-left">
         <img src="https://images.unsplash.com/photo-1586771107565-961ce6821873?q=80&w=1000&auto=format&fit=crop" alt="Background">
         <div class="register-overlay">
-          <h1>My Sawah</h1>
+          <h1>MySawah</h1>
         </div>
       </div>
 
       <div class="register-right">
         <div class="register-header">
           <h2>Buat Akun Baru</h2>
-          <p>Daftar untuk memulai menggunakan My Sawah</p>
+          <p>Daftar untuk memulai menggunakan MySawah</p>
         </div>
 
         <form @submit.prevent="handleRegister">
           
           <div class="form-group">
-            <label>Nama</label>
+            <label>Nama Lengkap</label>
             <div class="input-wrapper">
-              <input type="text" v-model="Name" placeholder="Masukkan Nama" required>
+              <input type="text" v-model="fullName" placeholder="Masukkan Nama Lengkap" required>
             </div>
           </div>
 
