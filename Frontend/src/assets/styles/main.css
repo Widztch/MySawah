@@ -4,6 +4,8 @@
 @import './sections/features.css';
 @import './sections/products.css';
 @import './components/product-card.css';
+@import './sections/login.css';
+@import './sections/register.css';
 
 body {
   margin: 0;
