@@ -6,6 +6,12 @@ import AIMascot from './AIMascot.vue'
 
   <section class="ai-section">
 
+    <!-- ================================= -->
+    <!-- TOP LINE -->
+    <!-- ================================= -->
+
+    <div class="ai-line-top"></div>
+
     <div class="ai-container">
 
       <!-- ================================= -->
@@ -29,7 +35,8 @@ import AIMascot from './AIMascot.vue'
 
         <!-- TITLE -->
         <h2 class="ai-title">
-          AI Assistant MySawah
+          AI Assistant
+          MySawah
         </h2>
 
         <!-- DESC -->
@@ -54,12 +61,11 @@ import AIMascot from './AIMascot.vue'
         <!-- CHAT TOP -->
         <div class="chat-green">
 
-          Hallo AI, Daun padi saya
-          menguning, itu kenapa ya?
+          Hallo AI, Berikut ini adalah data  ?
 
         </div>
 
-        <!-- CHAT BOTTOM -->
+        <!-- CHAT WHITE -->
         <div class="chat-white">
 
           <p>
@@ -90,18 +96,20 @@ import AIMascot from './AIMascot.vue'
         <!-- ================================= -->
 
         <div class="ai-mascot-position">
+
           <AIMascot />
+
         </div>
-
-        <!-- ================================= -->
-        <!-- SATU CIRCLE SAJA -->
-        <!-- ================================= -->
-
-        <div class="floating-circle"></div>
 
       </div>
 
     </div>
+
+    <!-- ================================= -->
+    <!-- BOTTOM LINE -->
+    <!-- ================================= -->
+
+    <div class="ai-line-bottom"></div>
 
   </section>
 
