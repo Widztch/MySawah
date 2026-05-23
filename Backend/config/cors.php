@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => ['http://localhost:5173', 'http://127.0.0.1:5173'], // ini digunakan untuk mengizinkan akses dari frontend yang berjalan di localhost:5173
 
     'allowed_origins_patterns' => [],
 
