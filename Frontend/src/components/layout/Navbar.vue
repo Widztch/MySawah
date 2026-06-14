@@ -1,24 +1,55 @@
 <template>
-  <nav class="bg-white px-6 md:px-12 py-4 flex items-center justify-between sticky top-0 z-50">
-    <div class="flex items-center gap-2">
-      <span class="w-6 h-6 bg-[#598348] text-white rounded-full flex items-center justify-center text-xs">🍃</span>
-      <span class="font-bold text-gray-900 text-lg">MySawah</span>
+  <nav class="navbar">
+
+    <div class="logo-wrapper">
+      <img :src="logo" alt="Logo MySawah" class="logo-img" />
+      <span class="logo-text">MySawah</span>
     </div>
 
-    <ul class="hidden md:flex items-center gap-8 text-sm text-gray-600">
-      <li><a href="#" class="text-gray-900 font-medium">Beranda</a></li>
-      <li><a href="#" class="hover:text-gray-900">Produk</a></li>
-      <li><a href="#" class="hover:text-gray-900">AI Assistant</a></li>
-      <li><a href="#" class="hover:text-gray-900">Tentang kami</a></li>
-    </ul>
+    <div class="nav-links">
+      <a href="#">Beranda</a>
+      <a href="#">Produk</a>
+      <a href="#">AI Assistant</a>
+      <a href="#">Tentang Kami</a>
+    </div>
 
-    <div class="flex items-center gap-4">
-      <div class="border border-gray-300 rounded-md px-3 py-1.5 flex items-center">
-        <input type="text" placeholder="Ketik Pesan..." class="outline-none text-xs w-32" />
-        <span class="text-gray-500 text-sm">🔍</span>
+    <div class="nav-right">
+
+      <div class="search-wrapper">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Cari produk..."
+        />
+        <img
+          :src="searchIcon"
+          alt="Search"
+          class="search-icon"
+        />
       </div>
-      <button class="text-gray-700">🛒</button>
-      <button class="text-gray-700">👤</button>
+
+      <div class="nav-actions">
+        <img
+          :src="cartIcon"
+          alt="Cart"
+          class="nav-icon-img"
+        />
+
+        <img
+          :src="userIcon"
+          alt="User"
+          class="nav-icon-img"
+        />
+      </div>
+
     </div>
+
   </nav>
 </template>
+
+<script setup>
+import logo from '@/assets/images/logo.png'
+import searchIcon from '@/assets/images/mdi-light--magnify.svg'
+import cartIcon from '@/assets/images/mdi-light--cart.svg'
+import userIcon from '@/assets/images/mdi-light--account.svg'
+</script>
