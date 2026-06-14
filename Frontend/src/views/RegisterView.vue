@@ -1,10 +1,15 @@
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { useAuthStore } from '../stores/authStore'
+
+const router = useRouter()
+const authStore = useAuthStore()
 
 const fullName = ref('')
 const email = ref('')
 const password = ref('')
-const confirmPassword = ref('')
+const confirmPassword = ref('') 
 
 const showPassword = ref(false)
 const showConfirmPassword = ref(false)
@@ -12,13 +17,25 @@ const showConfirmPassword = ref(false)
 const togglePassword = () => {
   showPassword.value = !showPassword.value
 }
-
 const toggleConfirmPassword = () => {
   showConfirmPassword.value = !showConfirmPassword.value
 }
 
-const handleRegister = () => {
-  console.log('Mendaftar dengan:', { nama: fullName.value, email: email.value })
+const handleRegister = async () => {
+  if (password.value !== confirmPassword.value) {
+    alert('Password dan Konfirmasi Password tidak cocok!');
+    return;
+  }
+
+  // Panggil fungsi register menggunakan Pinia
+  const success = await authStore.register(fullName.value, email.value, password.value)
+  
+  if (success) {
+    alert('Registrasi Berhasil!')
+    router.push('/') // Redirect ke halaman utama
+  } else {
+    alert(authStore.error)
+  }
 }
 </script>
 

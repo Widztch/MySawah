@@ -1,5 +1,10 @@
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { useAuthStore } from '../stores/authStore' 
+
+const router = useRouter()
+const authStore = useAuthStore()
 
 const email = ref('')
 const password = ref('')
@@ -9,8 +14,17 @@ const togglePassword = () => {
   showPassword.value = !showPassword.value
 }
 
-const handleLogin = () => {
-  console.log('Login dengan:', email.value)
+const handleLogin = async () => {
+  // Panggil fungsi login dari Pinia
+  const success = await authStore.login(email.value, password.value)
+  
+  if (success) {
+    alert('Login Berhasil')
+    router.push('/') // Redirect ke halaman utama
+  } else {
+    // Tampilkan error dari backend
+    alert(authStore.error) 
+  }
 }
 </script>
 
