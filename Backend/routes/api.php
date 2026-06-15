@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\AuthController;
-// use App\Http\Controllers\Api\TransactionController;
+use App\Http\Controllers\Api\TransactionController;
 
 Route::prefix('v1')->group(function () {
 
@@ -21,13 +21,13 @@ Route::prefix('v1')->group(function () {
         Route::delete('/user/photo', [AuthController::class, 'deletePhoto']);
         Route::post('/logout', [AuthController::class, 'logout']);
         
-        // TRANSACTION [Soon]
-        // Route::get('/cart', [TransactionController::class, 'getCart']);     
-        // Route::post('/cart/reduce', [TransactionController::class, 'reduceItem']); 
-        // Route::post('/checkout', [TransactionController::class, 'checkout']);
-        // Route::post('/pay', [TransactionController::class, 'pay']);       
-        // Route::delete('/cart/clear', [TransactionController::class, 'clearCart']);  
-        // Route::get('/history', [TransactionController::class, 'history']);
+        // TRANSACTION
+        Route::get('/cart', [TransactionController::class, 'getCart']);     
+        Route::post('/cart/reduce', [TransactionController::class, 'reduceItem']); 
+        Route::post('/checkout', [TransactionController::class, 'checkout']);
+        Route::post('/pay', [TransactionController::class, 'pay']);       
+        Route::delete('/cart/clear', [TransactionController::class, 'clearCart']);  
+        Route::get('/history', [TransactionController::class, 'history']);
     });    
 
     // PRODUCT 
