@@ -5,7 +5,7 @@ use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\TransactionController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
-use App\Http\Controlers\Admin\OrderController as AdminOrderController;
+use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 
 // ==========================================================
 // RUTE USER
