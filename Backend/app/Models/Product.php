@@ -12,6 +12,8 @@ class Product extends Model
     protected $table = 'products';
     protected $primaryKey = 'id_produk'; 
 
+    protected $appends = ['terjual'];
+
     protected $fillable = [
         'nama_produk',
         'harga',
@@ -33,6 +35,17 @@ class Product extends Model
 
         // Jika hanya nama file
         return asset('storage/products/' . $value);
+    }
+
+    public function getTerjualAttribute()
+    {
+        // Hitung total 'jumlah' dari tabel order_details khusus untuk produk ini
+        return \App\Models\OrderDetail::where('id_produk', $this->id_produk)
+            ->whereHas('order', function ($query) {
+                // HANYA hitung jika status pesanan BUKAN pending
+                $query->where('status_order', '!=', 'PENDING');
+            })
+            ->sum('jumlah');
     }
 
 }

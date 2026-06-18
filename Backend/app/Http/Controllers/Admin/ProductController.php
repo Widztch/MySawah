@@ -113,16 +113,15 @@ class ProductController extends Controller
             'message' => 'Produk berhasil dihapus!'
         ]);
     }
-
     // ==========================================================
-    // 4. HAPUS SELECTED PRODUK (Bulk Delete)
+    // 4. HAPUS BANYAK PRODUK SEKALIGUS (BULK DELETE)
     // ==========================================================
     public function destroyBulk(Request $request)
     {
         // Validasi bahwa request harus berupa array 'ids' dan minimal 1 data
         $request->validate([
             'ids'   => 'required|array|min:1',
-            'ids.*' => 'exists:products,id_produk'
+            'ids.*' => 'exists:products,id_produk' // Pastikan semua ID benar-benar ada di database
         ]);
 
         // Cari semua produk berdasarkan array ID yang dikirim

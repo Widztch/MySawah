@@ -14,6 +14,7 @@ class OrderController extends Controller
     // ==========================================================
     public function index(Request $request)
     {
+        // Opsional: Bisa difilter berdasarkan status dari Vue.js
         // Contoh: /api/v1/admin/orders?status=PAID
         $status = $request->query('status');
 
@@ -23,7 +24,7 @@ class OrderController extends Controller
             $query->where('status_order', $status);
         }
 
-        // Menggunakan pagination agar admin tidak berat saat memuat ribuan transaksi
+        // Gunakan pagination agar admin tidak berat saat memuat ribuan transaksi
         $orders = $query->paginate(15);
 
         return response()->json([
@@ -65,7 +66,7 @@ class OrderController extends Controller
     // ==========================================================
     public function omzetReport()
     {
-        // Disini Kita hitung omzet HANYA dari pesanan yang tidak PENDING
+        // Kita hitung omzet HANYA dari pesanan yang tidak PENDING
         // (Artinya yang sudah dibayar: PAID, PROCESSED, SHIPPED, COMPLETED)
         
         $today = Carbon::today();
