@@ -1,0 +1,218 @@
+/* =====================================
+   ANIMASI MASUK (FADE UP)
+===================================== */
+.animate-fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    will-change: transform, opacity;
+  }
+  
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* =====================================
+     STYLE HALAMAN TENTANG KAMI
+  ===================================== */
+  .page-wrapper {
+    background-color: #f5f5f2;
+    min-height: 100vh;
+    padding-bottom: 80px;
+  }
+  
+  .about-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../images/about/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 120px 24px 140px; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+  }
+  
+  .section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(4px); 
+  }
+  
+  .badge-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+  }
+  
+  .hero-title {
+    font-size: 52px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 24px 0;
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  .about-container {
+    max-width: 1100px;
+    margin: -60px auto 0; /* Menarik konten naik menimpa hero */
+    padding: 0 24px;
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* VISI MISI */
+  .vision-mission-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 80px;
+  }
+  
+  .vm-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08); /* Bayangan sedikit diperkuat karena menimpa hero */
+    border: 1px solid #f0f0f0;
+  }
+  
+
+  .vm-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: #edf3ea; 
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  
+  .vm-icon-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+  }
+  
+  .vm-card h2 {
+    font-size: 24px;
+    color: #222;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  
+  .vm-card p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  
+  .mission-list {
+    padding-left: 20px;
+    color: #555;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  
+  .mission-list li {
+    margin-bottom: 12px;
+  }
+  
+  /* NILAI UTAMA (MENGAPA MYSAWAH) */
+  .values-section {
+    padding-top: 20px;
+  }
+  
+  .section-title-center {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 50px;
+  }
+  
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  
+  .value-item {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .value-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(92, 129, 77, 0.1);
+  }
+  
+  .value-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: #edf3ea;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+  }
+  
+  .value-icon-img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+  }
+  
+  .value-item h3 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 16px;
+  }
+  
+  .value-item p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 15px;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 36px;
+    }
+    .vision-mission-section {
+      grid-template-columns: 1fr;
+    }
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  }
