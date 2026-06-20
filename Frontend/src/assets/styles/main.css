@@ -4,7 +4,11 @@
 @import './sections/features.css';
 @import './sections/products.css';
 @import './components/product-card.css';
+@import './components/navbar.css';
 @import './sections/login.css';
+@import './sections/register.css';
+@import './sections/ai-assistant.css';
+@import './sections/about.css';
 
 body {
   margin: 0;

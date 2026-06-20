@@ -6,97 +6,41 @@
     <!-- NAVBAR -->
     <!-- ================================= -->
 
-    <header class="navbar">
-
-      <div class="navbar-container">
-
-        <!-- LOGO -->
-        <div class="logo">
-          🌿 MySawah
-        </div>
-
-        <!-- MENU -->
-        <nav class="nav-menu">
-
-          <a href="#">Beranda</a>
-          <a href="#">Produk</a>
-          <a href="#">AI Assistant</a>
-          <a href="#">Tentang Kami</a>
-
-        </nav>
-
-        <!-- RIGHT -->
-        <div class="navbar-right">
-
-          <input
-            type="text"
-            placeholder="Ketik Pesan..."
-            class="search-input"
-          />
-
-          <span class="nav-icon">🔍</span>
-          <span class="nav-icon">🛒</span>
-          <span class="nav-icon">👤</span>
-
-        </div>
-
-      </div>
-
-    </header>
+    <Navbar />
 
     <!-- ================================= -->
     <!-- HERO SECTION -->
     <!-- ================================= -->
-
-    <section class="hero-section">
+    <section 
+      class="hero-section" 
+      :style="{ backgroundImage: `url(${heroBgImage})` }"
+    >
+      <div class="hero-overlay"></div>
 
       <div class="hero-container">
-
-        <!-- LEFT -->
-        <div class="hero-left">
-
+        <div class="hero-content">
+          
           <h1 class="hero-title">
-            Solusi Digital untuk
+            Solusi Digital untuk<br>
             Pertanian Modern
           </h1>
-
+          
           <p class="hero-description">
-            Platform pertanian terintegrasi dengan teknologi AI,
-            marketplace produk berkualitas, dan pengiriman cepat
+            Platform pertanian terintegrasi dengan teknologi AI, 
+            marketplace produk berkualitas, dan pengiriman cepat 
             untuk mendukung petani indonesia
           </p>
-
+          
           <div class="hero-buttons">
-
             <button class="btn-primary">
               Mulai Sekarang
             </button>
-
             <button class="btn-secondary">
               Jelajahi Produk
             </button>
-
           </div>
 
         </div>
-
-        <!-- RIGHT -->
-        <div class="hero-right">
-
-          <!-- ===================================== -->
-          <!-- GANTI GAMBAR HERO DI SINI -->
-          <!-- ===================================== -->
-
-          <img
-            src="https://dummyimage.com/900x700/cfd8c5/ffffff"
-            alt="Hero"
-            class="hero-image"
-          />
-
-          <div class="hero-overlay"></div>
-
-        </div>
-
       </div>
 
     </section>
@@ -203,10 +147,26 @@
 
 <ProductList />
 
+<!-- ================================= -->
+<!-- AI ASSISTANT -->
+<!-- ================================= -->
+
+<AIChat />
+
+<!-- ================================= -->
+<!-- ABOUT -->
+<!-- ================================= -->
+
+<AboutStats />
+
   </div>
 
 </template>
 
 <script setup>
+import heroBgImage from '../assets/images/bg.png'
+import Navbar from '@/components/layout/Navbar.vue'
 import ProductList from '@/components/product/ProductList.vue'
+import AIChat from '@/components/ai/AIChat.vue'
+import AboutStats from '@/components/about/AboutStats.vue'
 </script>

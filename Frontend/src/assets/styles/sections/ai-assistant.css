@@ -1,12 +1,214 @@
+/* =====================================
+   AI SECTION
+===================================== */
+
 .ai-section {
   max-width: 1280px;
   margin: auto;
   padding: 120px 24px;
+  position: relative;
 }
+
+/* =====================================
+   TOP & BOTTOM LINE
+===================================== */
+
+.ai-line-top {
+  width: 100%;
+  height: 3px;
+
+  background: #111;
+
+  margin-bottom: 80px;
+}
+
+.ai-line-bottom {
+  width: 62%;
+  height: 3px;
+
+  background: #111;
+
+  margin-left: auto;
+  margin-top: 80px;
+}
+
+/* =====================================
+   CONTAINER
+===================================== */
 
 .ai-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 80px;
   align-items: center;
+}
+
+/* =====================================
+   LEFT
+===================================== */
+
+.ai-left {
+  position: relative;
+}
+
+.ai-mini-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 28px;
+}
+
+.mini-brand-circle {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 999px;
+
+  background: #5c844c;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+}
+
+.ai-title {
+  font-size: 72px;
+  line-height: 1.05;
+  font-weight: 700;
+
+  color: #222;
+
+  margin-bottom: 26px;
+}
+
+.ai-description {
+  max-width: 460px;
+
+  color: #666;
+  line-height: 1.9;
+
+  margin-bottom: 44px;
+
+  font-size: 16px;
+}
+
+/* =====================================
+   RIGHT
+===================================== */
+
+.ai-right {
+  position: relative;
+  min-height: 500px;
+}
+
+/* =====================================
+   CHAT GREEN
+===================================== */
+
+.chat-green {
+  position: absolute;
+
+  top: -40px;
+  right: 0;
+
+  width: 340px;
+
+  background: #d8ebcb;
+
+  border: 1px solid #7c9c6f;
+
+  padding: 22px;
+
+  border-radius: 20px;
+
+  line-height: 1.8;
+
+  color: #333;
+
+  z-index: 5;
+}
+
+/* =====================================
+   CHAT WHITE
+===================================== */
+
+.chat-white {
+  position: absolute;
+  top: 120px;
+  right: 0;
+  width: 480px;
+
+  padding-left: 140px;
+  background: white;
+
+  border: 1px solid #d8d8d8;
+
+  border-radius: 22px;
+
+  padding: 34px;
+
+  line-height: 1.9;
+
+  color: #555;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+
+  z-index: 4;
+}
+
+.chat-list {
+  margin-top: 28px;
+}
+
+.chat-list h4 {
+  margin-bottom: 14px;
+  color: #222;
+}
+
+.chat-list ol {
+  padding-left: 22px;
+}
+
+/* =====================================
+   AI MASCOT POSITION
+===================================== */
+
+.ai-mascot-position {
+  position: absolute;
+
+  left: -130px;
+  bottom: 20px;
+
+  z-index: 1;
+}
+
+/* =====================================
+   MASCOT
+===================================== */
+
+.mascot-wrapper {
+  width: 200px;
+  height: 200px;
+
+  border-radius: 999px;
+
+  background: #d8ebcb;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.mascot-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
 }
