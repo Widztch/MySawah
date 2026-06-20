@@ -9,6 +9,7 @@
 @import './sections/register.css';
 @import './sections/ai-assistant.css';
 @import './sections/about.css';
+@import './components/toast.css';
 
 body {
   margin: 0;
