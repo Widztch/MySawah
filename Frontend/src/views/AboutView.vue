@@ -90,4 +90,5 @@ import iconTruck from '@/assets/images/about/icon-delivery.png'
       </section>
     </div>
   </div>
+<Footer />
 </template>

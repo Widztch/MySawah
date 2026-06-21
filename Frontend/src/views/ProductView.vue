@@ -98,6 +98,6 @@ const filteredProducts = computed(() => {
         </div>
       </div>
     </div>
-    
   </div>
+<Footer />
 </template>

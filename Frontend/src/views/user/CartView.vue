@@ -2,6 +2,7 @@
 import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import Navbar from '@/components/layout/Navbar.vue'
+import Footer from '@/components/layout/Footer.vue'
 import { useCartStore } from '@/stores/cartStore'
 
 const router = useRouter()
@@ -90,4 +91,5 @@ onMounted(() => {
       </div>
     </div>
   </div>
+<Footer />
 </template>

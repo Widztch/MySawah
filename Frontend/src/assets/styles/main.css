@@ -25,6 +25,7 @@
 @import './components/loading.css';
 @import './components/confirm-modal.css';
 @import './components/toast.css';
+@import './layout/footer.css';
 
 /* History */
 
