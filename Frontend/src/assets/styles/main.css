@@ -4,7 +4,7 @@
 
 
 /* User */
-
+@import './views/auth/user-profile.css';
 
 /* Auth */
 @import './views/auth/login.css';
@@ -28,7 +28,7 @@
 @import './layout/footer.css';
 
 /* History */
-
+@import './views/history/history-view.css';
 
 /* Cart */
 @import './views/product/cart.css';
