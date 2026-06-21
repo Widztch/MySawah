@@ -1,34 +1,32 @@
-/* src/assets/styles/views/user-profile.css */
-
 .page-wrapper {
     background-color: #f5f5f2;
     min-height: 100vh;
     padding-bottom: 60px;
-  }
-  
-  .profile-container {
+}
+
+.profile-container {
     max-width: 1000px;
     margin: 40px auto;
     padding: 0 24px;
-  }
-  
-  .profile-title {
+}
+
+.profile-title {
     color: #222;
     margin-bottom: 24px;
     font-size: 28px;
-  }
-  
-  .profile-card {
+}
+
+.profile-card {
     display: flex;
     background: white;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.03);
     overflow: hidden;
     border: 1px solid #f0f0f0;
-  }
-  
-  /* BAGIAN KIRI: FOTO */
-  .profile-photo-section {
+}
+
+/* BAGIAN KIRI: FOTO */
+.profile-photo-section {
     flex: 1;
     padding: 40px;
     display: flex;
@@ -36,9 +34,9 @@
     align-items: center;
     border-right: 1px solid #f0f0f0;
     background: #fafafa;
-  }
-  
-  .photo-wrapper {
+}
+
+.photo-wrapper {
     width: 180px;
     height: 180px;
     border-radius: 50%;
@@ -46,39 +44,39 @@
     margin-bottom: 24px;
     border: 4px solid #fff;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  }
-  
-  .profile-img {
+}
+
+.profile-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  .photo-actions {
+}
+
+.photo-actions {
     display: flex;
     flex-direction: column;
     gap: 12px;
     width: 100%;
-  }
-  
-  /* Tombol Custom Upload File */
-  .btn-upload-wrapper {
+}
+
+/* Tombol Custom Upload File */
+.btn-upload-wrapper {
     position: relative;
     overflow: hidden;
     display: inline-block;
     width: 100%;
-  }
-  
-  .btn-upload-wrapper input[type=file] {
+}
+
+.btn-upload-wrapper input[type=file] {
     font-size: 100px;
     position: absolute;
     left: 0;
     top: 0;
     opacity: 0;
     cursor: pointer;
-  }
-  
-  .btn-upload {
+}
+
+.btn-upload {
     width: 100%;
     background: #5c814d;
     color: white;
@@ -89,11 +87,13 @@
     text-align: center;
     cursor: pointer;
     transition: 0.3s;
-  }
-  
-  .btn-upload-wrapper:hover .btn-upload { background: #47653b; }
-  
-  .btn-delete-photo {
+}
+
+.btn-upload-wrapper:hover .btn-upload {
+    background: #47653b;
+}
+
+.btn-delete-photo {
     background: white;
     color: #d93025;
     padding: 10px;
@@ -102,38 +102,96 @@
     border: 1px solid #fad2cf;
     cursor: pointer;
     transition: 0.3s;
-  }
-  
-  .btn-delete-photo:hover { background: #fce8e6; }
-  
-  /* BAGIAN KANAN: FORM BIODATA */
-  .profile-form-section {
+}
+
+.btn-delete-photo:hover {
+    background: #fce8e6;
+}
+
+/* BAGIAN KANAN: FORM BIODATA */
+.profile-form-section {
     flex: 2;
     padding: 40px;
-  }
-  
-  .form-group { margin-bottom: 20px; }
-  .form-group label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 600; color: #444; }
-  
-  .form-group input, .form-group textarea {
-    width: 100%; padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px;
-    font-family: inherit; font-size: 14px; box-sizing: border-box; background: white;
-  }
-  
-  .form-group input:disabled { background: #f5f5f2; color: #888; cursor: not-allowed; }
-  
-  .form-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding-top: 24px; border-top: 1px solid #f0f0f0; }
-  
-  .btn-save { background: #5c814d; color: white; padding: 12px 30px; border-radius: 8px; font-weight: 600; border: none; cursor: pointer; transition: 0.3s; }
-  .btn-save:hover { background: #47653b; }
-  
-  .btn-logout { background: transparent; color: #d93025; border: none; font-weight: 600; font-size: 15px; cursor: pointer; }
-  .btn-logout:hover { text-decoration: underline; }
-  
-  /* LOADING STATE */
-  .loading-overlay { text-align: center; padding: 60px; color: #5c814d; font-weight: 600; }
-  
-  @media (max-width: 768px) {
-    .profile-card { flex-direction: column; }
-    .profile-photo-section { border-right: none; border-bottom: 1px solid #f0f0f0; }
-  }
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    box-sizing: border-box;
+    background: white;
+}
+
+.form-group input:disabled {
+    background: #f5f5f2;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 24px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.btn-save {
+    background: #5c814d;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-save:hover {
+    background: #47653b;
+}
+
+.btn-logout {
+    background: transparent;
+    color: #d93025;
+    border: none;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+}
+.btn-logout:hover {
+    text-decoration: underline;
+}
+
+/* LOADING STATE */
+.loading-overlay {
+    text-align: center;
+    padding: 60px;
+    color: #5c814d;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .profile-card {
+        flex-direction: column;
+    }
+    .profile-photo-section {
+        border-right: none;
+        border-bottom: 1px solid #f0f0f0;
+    }
+}
