@@ -3,6 +3,7 @@
 /* Admin */
 @import './layout/admin-layout.css';
 @import './views/admin/admin-dashboard.css';
+@import './views/admin/admin-products.css';
 
 /* User */
 @import './views/auth/user-profile.css';

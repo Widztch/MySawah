@@ -11,6 +11,7 @@ import HistoryView from '../views/user/HistoryView.vue'
 import UserProfile from '../views/user/UserProfile.vue'
 import AdminLayout from '../components/layout/AdminLayout.vue'
 import AdminDashboard from '../views/admin/AdminDashboard.vue'
+import AdminProducts from '../views/admin/AdminProducts.vue'
 
 
 const router = createRouter({
@@ -68,6 +69,11 @@ const router = createRouter({
           path: 'dashboard',
           name: 'admin-dashboard',
           component: AdminDashboard
+        },
+        {
+          path: 'products',
+          name: 'admin-products',
+          component: AdminProducts
         },
       ]
     },
