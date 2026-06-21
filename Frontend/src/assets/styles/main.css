@@ -13,7 +13,7 @@
 /* Home */
 @import './components/product-list.css';
 @import './views/ai/ai-chat.css';
-@import './views/about/about.css';
+@import './views/about/about-stats.css';
 @import './views/home/hero.css';
 
 /* Product */
