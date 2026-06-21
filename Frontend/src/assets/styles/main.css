@@ -12,6 +12,8 @@
 @import './components/toast.css';
 @import './sections/about-view.css';
 @import './components/product-list.css';
+@import './sections/cart.css';
+
 body {
   margin: 0;
   padding: 0;

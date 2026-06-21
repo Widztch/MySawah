@@ -1,0 +1,225 @@
+.page-wrapper {
+    background-color: #f5f5f2;
+    min-height: 100vh;
+    padding-bottom: 60px;
+}
+.cart-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 24px;
+}
+.cart-title {
+    font-size: 28px;
+    color: #222;
+    margin-bottom: 24px;
+}
+
+/* STATE KOSONG */
+.empty-cart-state {
+    text-align: center;
+    padding: 80px 20px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+.empty-icon {
+    font-size: 64px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+.empty-cart-state h3 {
+    font-size: 20px;
+    color: #222;
+    margin: 0 0 8px;
+}
+.empty-cart-state p {
+    color: #666;
+    margin-bottom: 24px;
+}
+.btn-shop-now {
+    display: inline-block;
+    background: #5c814d;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.btn-shop-now:hover {
+    background: #47653b;
+}
+
+/* LAYOUT GRID 2 KOLOM */
+.cart-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+/* DAFTAR BARANG (KIRI) */
+.cart-items-section {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #333;
+}
+.btn-clear-cart {
+    background: transparent;
+    color: #d93025;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-clear-cart:hover {
+    text-decoration: underline;
+}
+
+.cart-item-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f5f5f2;
+    margin-bottom: 20px;
+}
+.cart-item-card:last-child {
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+}
+.item-details {
+    flex: 1;
+}
+.item-details h4 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #222;
+}
+.item-price {
+    margin: 0;
+    font-weight: 600;
+    color: #666;
+}
+
+/* PENGONTROL QTY */
+.qty-controller {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 4px;
+}
+.btn-qty {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f2;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-qty:hover {
+    background: #e5e5e0;
+}
+.qty-number {
+    font-weight: 600;
+    min-width: 20px;
+    text-align: center;
+}
+
+.item-total-price {
+    font-weight: 700;
+    font-size: 16px;
+    color: #5c814d;
+    min-width: 120px;
+    text-align: right;
+}
+
+/* RINGKASAN BELANJA (KANAN) */
+.summary-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid #5c814d;
+}
+.summary-card h3 {
+    margin: 0 0 20px;
+    font-size: 18px;
+    color: #222;
+}
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    color: #555;
+}
+.summary-divider {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 16px 0;
+}
+.total-row {
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 24px;
+}
+.btn-checkout {
+    width: 100%;
+    background: #5c814d;
+    color: white;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-checkout:hover {
+    background: #47653b;
+}
+
+@media (max-width: 768px) {
+    .cart-content {
+        grid-template-columns: 1fr;
+    }
+    .cart-item-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .qty-controller {
+        align-self: flex-start;
+        margin-top: 10px;
+    }
+    .item-total-price {
+        text-align: left;
+        margin-top: 10px;
+    }
+}
