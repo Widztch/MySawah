@@ -4,7 +4,7 @@
 
 
 /* User */
-
+@import './views/auth/user-profile.css';
 
 /* Auth */
 @import './views/auth/login.css';
