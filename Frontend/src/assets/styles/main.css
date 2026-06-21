@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* Admin */
-
+@import './layout/admin-layout.css';
 
 /* User */
 @import './views/auth/user-profile.css';

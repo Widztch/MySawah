@@ -7,6 +7,7 @@ import ProductView from '@/views/ProductView.vue'
 import CartView from '@/views/user/CartView.vue'
 import HistoryView from '../views/user/HistoryView.vue'
 import UserProfile from '../views/user/UserProfile.vue'
+import AdminLayout from '../components/layout/AdminLayout.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -46,13 +47,24 @@ const router = createRouter({
       path: '/riwayat-pesanan',
       name: 'order-history',
       component: HistoryView,
+      meta: { requiresAuth: true }
     },
     {
       path: '/profil',
       name: 'user-profile',
       component: UserProfile,
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/admin',
+      component: AdminLayout,
+      meta: { requiresAdmin: true },
+      children: [
+      ]
     },
   ]
 })
+
+
 
 export default router
