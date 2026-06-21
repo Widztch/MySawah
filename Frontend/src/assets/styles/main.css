@@ -28,7 +28,7 @@
 @import './layout/footer.css';
 
 /* History */
-
+@import './views/history/history-view.css';
 
 /* Cart */
 @import './views/product/cart.css';
