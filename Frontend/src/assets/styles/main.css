@@ -13,6 +13,8 @@
 @import './sections/about-view.css';
 @import './components/product-list.css';
 @import './sections/cart.css';
+@import './components/confirm-modal.css';
+
 
 body {
   margin: 0;
