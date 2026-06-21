@@ -7,7 +7,7 @@
 @import './components/navbar.css';
 @import './sections/login.css';
 @import './sections/register.css';
-@import './sections/ai-assistant.css';
+@import './sections/ai-chat.css';
 @import './sections/about.css';
 @import './components/toast.css';
 @import './sections/about-view.css';

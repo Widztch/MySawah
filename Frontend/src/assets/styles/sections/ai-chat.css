@@ -1,0 +1,227 @@
+.ai-section {
+    max-width: 1280px;
+    margin: auto;
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* =====================================
+     TOP & BOTTOM LINE (ASIMETRIS)
+  ===================================== */
+  .ai-line-top {
+    width: 75%; /* Terpotong di kanan */
+    height: 2px;
+    background: #111;
+    margin-bottom: 60px;
+    margin-right: auto; /* Memaksa garis merapat ke kiri */
+  }
+  
+  .ai-line-bottom {
+    width: 75%; /* Terpotong di kiri */
+    height: 2px;
+    background: #111;
+    margin-left: auto; /* Memaksa garis merapat ke kanan */
+    margin-top: 60px;
+  }
+  
+  /* =====================================
+     CONTAINER
+  ===================================== */
+  .ai-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: flex-start; 
+  }
+  
+  /* =====================================
+   LEFT SIDE (TEKS & TOMBOL)
+===================================== */
+.ai-left {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ai-text-content {
+    margin-bottom: 80px; 
+  }
+  
+  .ai-mini-brand {
+    display: inline-flex; /* Menggunakan inline-flex agar lebarnya memeluk isi, tidak melar */
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #5c814d; /* Teks warna hijau MySawah */
+    
+    /* Bentuk Kapsul */
+    background-color: #edf3ea; /* Latar hijau pastel yang sangat lembut */
+    padding: 8px 20px; /* Ruang bernapas di dalam kapsul */
+    border-radius: 50px; /* Lengkungan 50px memaksa bentuknya menjadi oval/kapsul penuh */
+    border: 1px solid #d4e5ce; /* Garis tepi tipis agar menyatu dengan latar putih */
+  }
+  
+  .mini-brand-logo {
+    width: 20px;
+    height: auto;
+  }
+  
+  .ai-title {
+    font-size: 44px;
+    line-height: 1.2;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 16px;
+  }
+  
+  .ai-description {
+    max-width: 400px;
+    color: #555;
+    line-height: 1.6;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  /* Tombol dibungkus div terpisah agar tetap di posisinya */
+  .ai-btn-wrapper {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .btn-primary.ai-btn {
+    background: #5c814d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 32px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(92, 129, 77, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary.ai-btn:hover {
+    background: #4a6b3d;
+    transform: translateY(-2px);
+  }
+  
+ /* =====================================
+   RIGHT SIDE (CHAT BUBBLES)
+    ===================================== */
+    .ai-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 20px; 
+  }
+  
+  /* KOTAK CHAT PENGGUNA (HIJAU MUDA) */
+  .chat-user-box {
+    align-self: flex-end; 
+    position: relative;
+    width: 340px; /* Sedikit diperlebar agar teks justify lebih rapi */
+    background: #d4ebd3; 
+    border: 1px solid #a3c4a1;
+    padding: 20px 24px; /* Padding kiri-kanan ditambah sedikit */
+    border-radius: 12px;
+    color: #333;
+    line-height: 1.6;
+    font-size: 14px;
+    text-align: justify; /* KUNCI: Membuat teks rata kiri-kanan */
+    z-index: 2;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+  }
+  
+  /* KOTAK CHAT AI (PUTIH) */
+  .chat-ai-box {
+    align-self: flex-start; 
+    position: relative;
+    width: 480px; /* Sedikit diperlebar */
+    background: white;
+    border: 1px solid #d8d8d8;
+    border-radius: 12px;
+    padding: 24px 28px; 
+    line-height: 1.6;
+    color: #555;
+    font-size: 14px;
+    text-align: justify; /* KUNCI: Membuat teks rata kiri-kanan */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    z-index: 2;
+    margin-top: -10px; 
+  }
+  
+ /* =====================================
+   AVATAR (MENGGUNAKAN GAMBAR LOKAL)
+    ===================================== */
+    .chat-avatar-user,
+    .chat-avatar-ai {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    overflow: hidden; /* Memastikan gambar tetap bulat */
+    }
+
+    /* Pengaturan Khusus Avatar User (Kanan Atas, Punya Border) */
+    .chat-avatar-user {
+    top: -20px;
+    right: -20px;
+    background: white;
+    border: 1px solid #333; /* Border tetap dipertahankan untuk User */
+    }
+
+    /* Pengaturan Khusus Avatar AI (Kiri Atas, Tanpa Border) */
+    .chat-avatar-ai {
+    top: -20px; 
+    left: -20px;
+    background: transparent; /* Latar transparan agar lebih estetik */
+    border: none; 
+    }
+
+    /* Gaya untuk tag <img> di dalam avatar */
+    .avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Agar gambar tidak gepeng */
+    }
+  
+  /* =====================================
+     LIST & ANIMASI 
+  ===================================== */
+  .chat-list {
+    margin-top: 16px;
+  }
+  
+  .chat-list h4 {
+    margin-bottom: 8px;
+    color: #5c814d; 
+    font-size: 14px;
+  }
+  
+  .chat-list ol {
+    padding-left: 20px;
+    margin: 0;
+  }
+  
+  .floating-animation {
+    animation: floatChat 6s ease-in-out infinite;
+  }
+  
+  .floating-animation-delayed {
+    animation: floatChat 6s ease-in-out infinite;
+    animation-delay: 2s; 
+  }
+  
+  @keyframes floatChat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
