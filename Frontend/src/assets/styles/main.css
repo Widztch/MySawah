@@ -4,6 +4,7 @@
 @import './layout/admin-layout.css';
 @import './views/admin/admin-dashboard.css';
 @import './views/admin/admin-products.css';
+@import './views/admin/admin-orders.css';
 
 /* User */
 @import './views/auth/user-profile.css';
