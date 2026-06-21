@@ -6,8 +6,9 @@
 .hero-section {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 600px; /* Anda bisa memperbesar/memperkecil angka ini untuk mengubah tinggi gambar */
   
+  /* Pastikan nama gambar sesuai dengan yang Anda siapkan */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -129,7 +130,7 @@
 
 .feature-item:hover {
   transform: translateY(-8px); /* Mengambang ke atas */
-  box-shadow: 0 16px 30px rgba(92, 129, 77, 0.15); 
+  box-shadow: 0 16px 30px rgba(92, 129, 77, 0.15); /* Bayangan hijau estetik MySawah */
   border-color: #a0c78f; /* Warna garis ikut berubah agak kehijauan */
 }
 
@@ -137,7 +138,7 @@
 .custom-icon {
   width: 100px; 
   height: 100px; 
-  object-fit: contain; 
+  object-fit: contain; /* Memastikan gambar tidak gepeng */
 }
 
 .feature-title {
@@ -157,19 +158,22 @@
    LOGIKA ANIMASI SCROLL (MASUK & KELUAR)
 ===================================== */
 
+/* Kondisi AWAL: Elemen tersembunyi dan terdorong ke bawah */
 .animate-on-scroll {
   opacity: 0;
-  filter: blur(5px); 
+  filter: blur(5px); /* Memberikan efek blur tipis saat belum muncul */
   transform: translateY(40px);
   transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
 }
 
+/* Kondisi AKTIF: Elemen terlihat saat masuk layar (otomatis ditambah JS) */
 .animate-on-scroll.show {
   opacity: 1;
   filter: blur(0);
   transform: translateY(0);
 }
 
+/* Animasi khusus awal muat untuk tulisan Hero agar langsung muncul manis */
 .hero-content {
   animation: fadeUpHero 1s ease-out forwards;
 }

@@ -54,7 +54,7 @@
     margin-bottom: 24px;
     font-weight: 700;
     font-size: 14px;
-    color: #5c814d; /* Teks warna hijau MySawah */
+    color: #5c814d; 
     
     /* Bentuk Kapsul */
     background-color: #edf3ea; /* Latar hijau pastel yang sangat lembut */
@@ -148,7 +148,7 @@
     line-height: 1.6;
     color: #555;
     font-size: 14px;
-    text-align: justify; /* KUNCI: Membuat teks rata kiri-kanan */
+    text-align: justify; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.06);
     z-index: 2;
     margin-top: -10px; 

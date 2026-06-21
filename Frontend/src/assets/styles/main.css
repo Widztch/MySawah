@@ -1,19 +1,41 @@
 @import "tailwindcss";
 
-@import './sections/hero.css';
-@import './sections/features.css';
-@import './sections/products.css';
-@import './components/product-card.css';
-@import './components/navbar.css';
-@import './sections/login.css';
-@import './sections/register.css';
-@import './sections/ai-chat.css';
-@import './sections/about.css';
-@import './components/toast.css';
-@import './sections/about-view.css';
+/* Admin */
+
+
+/* User */
+
+
+/* Auth */
+@import './views/auth/login.css';
+@import './views/auth/register.css';
+
+/* Home */
 @import './components/product-list.css';
-@import './sections/cart.css';
+@import './views/ai/ai-chat.css';
+@import './views/about/about.css';
+@import './views/home/hero.css';
+
+/* Product */
+@import './views/product/products.css';
+@import './components/product-card.css';
+
+/* Section/component */
+@import './layout/navbar.css';
+@import './components/loading.css';
 @import './components/confirm-modal.css';
+@import './components/toast.css';
+
+/* History */
+
+
+/* Cart */
+@import './views/product/cart.css';
+
+/* Ai */
+
+/* about */
+@import './views/about/about-view.css';
 
 
 body {
