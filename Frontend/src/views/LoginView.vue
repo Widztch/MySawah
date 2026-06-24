@@ -2,31 +2,34 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '../stores/authStore' 
-// KUNCI: Impor Toast Store
 import { useToastStore } from '@/stores/toastStore'
 
 const router = useRouter()
 const authStore = useAuthStore()
 const toastStore = useToastStore()
-
 const email = ref('')
 const password = ref('')
 const showPassword = ref(false)
+const isLoading = ref(false)
 
 const togglePassword = () => {
   showPassword.value = !showPassword.value
 }
 
 const handleLogin = async () => {
-  const success = await authStore.login(email.value, password.value)
+  isLoading.value = true
   
-  if (success) {
-    // KUNCI: Panggil Toast untuk Sukses
-    toastStore.showToast('✅ Login Berhasil! Selamat datang.')
-    router.push('/') 
-  } else {
-    // KUNCI: Panggil Toast untuk Error
-    toastStore.showToast('❌ ' + (authStore.error || 'Login gagal.')) 
+  try {
+    const success = await authStore.login(email.value, password.value)
+    
+    if (success) {
+      toastStore.showToast('✅ Login Berhasil! Selamat datang.')
+      router.push('/') 
+    } else {
+      toastStore.showToast('❌ ' + (authStore.error || 'Login gagal.')) 
+    }
+  } finally {
+    isLoading.value = false
   }
 }
 </script>
@@ -83,7 +86,12 @@ const handleLogin = async () => {
             <a href="#" class="forgot-password">Lupa Password?</a>
           </div>
 
-          <button type="submit" class="btn-login">Masuk</button>
+          <button type="submit" class="btn-login" :disabled="isLoading">
+            <span v-if="isLoading" class="btn-content-loading">
+              <span class="spinner-icon"></span> Masuk...
+            </span>
+            <span v-else>Masuk</span>
+          </button>
         </form>
 
         <div class="login-footer">

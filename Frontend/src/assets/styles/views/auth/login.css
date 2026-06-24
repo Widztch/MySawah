@@ -86,7 +86,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative; /* KUNCI: Wajib ada agar tombol back bisa Absolute di dalamnya */
+  position: relative; 
 }
 
 /* GAYA TOMBOL KEMBALI */
@@ -97,7 +97,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #5c814d; /* Warna hijau MySawah */
+  color: #5c814d;
   text-decoration: none;
   font-weight: 700;
   font-size: 14px;
@@ -213,6 +213,33 @@
   margin-top: 25px;
   font-size: 14px;
   color: #5c814d;
+}
+
+.btn-content-loading {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.spinner-icon {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+button[type="submit"]:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 .login-footer a {
