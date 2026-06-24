@@ -15,6 +15,7 @@ import AdminProducts from '../views/admin/AdminProducts.vue'
 import AdminOrders from '../views/admin/AdminOrders.vue'
 import AILayout from '../components/layout/AILayout.vue'
 import AIPrediksiJagung from '../views/ai/AIPrediksiJagung.vue'
+import AITanamanPendamping from '../views/ai/AITanamanPendamping.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -93,6 +94,11 @@ const router = createRouter({
           path: 'prediksi-jagung',
           name: 'AIPrediksiJagung',
           component: AIPrediksiJagung
+        },
+        {
+          path: 'tanaman-pendamping',
+          name: 'AITanamanPendamping',
+          component: AITanamanPendamping
         },
       ]
     },

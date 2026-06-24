@@ -39,6 +39,7 @@
 /* Ai */
 @import './layout/ai-layout.css';
 @import './views/ai/AIPrediksiJagung.css';
+@import './views/ai/AITanamanPendamping.css';
 
 /* about */
 @import './views/about/about-view.css';

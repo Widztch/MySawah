@@ -1,0 +1,230 @@
+.ai-page-wrapper {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 24px;
+}
+
+.ai-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.ai-header h1 {
+    font-size: 32px;
+    color: #222;
+    margin-bottom: 12px;
+}
+.ai-header p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.ai-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border: 1px solid #f0f0f0;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.model-select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    background-color: white;
+    transition: 0.3s;
+}
+.model-select:focus {
+    border-color: #5c814d;
+}
+
+.btn-predict {
+    width: 100%;
+    background: #5c814d;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-predict:hover:not(:disabled) {
+    background: #4a6b3d;
+}
+.btn-predict:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+.result-box {
+    margin-top: 30px;
+    padding: 24px;
+    border-radius: 16px;
+    text-align: center;
+    border: 2px solid transparent;
+}
+.result-box h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #666;
+}
+.result-disease {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0;
+}
+
+/* Warna Hasil Jika (BAIK / BURUK) */
+.result-good {
+    background-color: #f0fdf4;
+    border-color: #86efac;
+}
+.result-good .result-title-text {
+    color: #166534;
+}
+
+.result-bad {
+    background-color: #fff7ed;
+    border-color: #fdba74;
+}
+.result-bad .result-title-text {
+    color: #c2410c;
+}
+
+.result-unknown {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+}
+.result-unknown .result-title-text {
+    color: #64748b;
+}
+
+.ai-message {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    margin-top: 16px;
+    padding: 16px;
+    background: white;
+    border-radius: 12px;
+    border: 1px dashed #d1d5db;
+    text-align: left;
+}
+
+.ai-message strong {
+    color: #111;
+    font-weight: 700;
+}
+.ai-message {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+    margin-top: 16px;
+    padding: 16px;
+    background: white;
+    border-radius: 12px;
+    border: 1px dashed #d1d5db;
+    text-align: left;
+}
+
+.ai-stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+.stat-badge {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.title-with-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.title-with-icon img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.stat-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.stat-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.btn-content-loading {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.spinner-icon {
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
