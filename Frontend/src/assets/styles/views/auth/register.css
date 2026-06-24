@@ -19,7 +19,6 @@
   position: relative;
 }
 
-  /* TOMBOL KEMBALI */
   .btn-back-home {
   position: absolute;
   top: 30px;
@@ -180,12 +179,12 @@
 .btn-register {
   width: 100%;
   margin-top: 15px;
-  padding: 14px 16px; /* Padding disesuaikan agar tombol tidak terlalu raksasa */
+  padding: 14px 16px; 
   border-radius: 10px;
   background: #5c814d;
   color: white;
   border: none;
-  font-size: 18px; /* Teks dibesarkan seperti tombol Masuk */
+  font-size: 18px; 
   font-weight: 700;
   cursor: pointer;
   transition: 0.3s;
@@ -193,6 +192,33 @@
 
 .btn-register:hover {
   background: #47653b;
+}
+
+.btn-content-loading {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.spinner-icon {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+button[type="submit"]:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 .register-footer {
