@@ -40,6 +40,7 @@
 @import './layout/ai-layout.css';
 @import './views/ai/AIPrediksiJagung.css';
 @import './views/ai/AITanamanPendamping.css';
+@import './views/ai/AIRekomendasiLahan.css';
 
 /* about */
 @import './views/about/about-view.css';
