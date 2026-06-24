@@ -1,0 +1,207 @@
+.admin-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f5f5f2;
+}
+
+.admin-sidebar {
+  width: 260px;
+  height: 100vh;
+  background-color: #5c814d;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: width;
+  transform: translateZ(0);
+}
+
+.sidebar-brand {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.sidebar-brand h2 {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 700;
+  transition: opacity 0.2s ease; 
+}
+
+.sidebar-nav {
+  padding: 24px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  padding: 14px 24px;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+  border-left: 4px solid transparent; 
+  transition: background-color 0.2s ease, color 0.2s ease, border-left-color 0.2s ease;
+}
+
+.nav-item:hover, .nav-item.router-link-active {
+  background-color: rgba(255,255,255,0.15);
+  color: white;
+  border-left-color: #fff; 
+}
+
+.nav-icon {
+  font-size: 18px;
+}
+
+.sidebar-footer {
+  padding: 24px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+}
+
+.btn-back {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  
+  /* Transisi spesifik agar ringan */
+  transition: background-color 0.2s ease;
+}
+
+.btn-back:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* KONTEN UTAMA & HEADER */
+.admin-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.admin-header {
+  background: white;
+  padding: 15px 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Jarak antara hamburger dengan teks selamat datang */
+}
+
+.btn-hamburger {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+  flex-shrink: 0; 
+}
+
+.btn-hamburger:hover {
+  background-color: rgba(255, 255, 255, 0.15); 
+}
+
+.hamburger-line {
+  width: 22px;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.admin-content {
+  padding: 30px;
+  flex: 1;
+  overflow-y: auto;
+}
+/* ===================================================
+   LOGIKA KELAS PERUBAHAN SAAT SIDEBAR MINIMIZED (MENGEMPIS)
+=================================================== */
+.sidebar-minimized .admin-sidebar {
+  width: 76px; 
+}
+
+.sidebar-minimized .sidebar-brand h2,
+.sidebar-minimized .sidebar-brand .brand-text,
+.sidebar-minimized .nav-text,
+.sidebar-minimized .btn-back .nav-text {
+  display: none !important; 
+}
+
+.sidebar-minimized .sidebar-brand {
+  justify-content: center; 
+  padding: 24px 0;
+}
+
+.sidebar-minimized .nav-item {
+  justify-content: center;
+  padding: 14px 0;
+}
+
+.sidebar-minimized .btn-back {
+  padding: 12px 0;
+  border: none;
+  background: transparent;
+  justify-content: center;
+}
+
+.sidebar-minimized .btn-back:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.sidebar-minimized .sidebar-icon {
+  margin: 0 auto;
+}
+
+/* ===================================================
+   ANIMASI TRANSISI HALAMAN (ROUTER VIEW)
+=================================================== */
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-15px);
+}

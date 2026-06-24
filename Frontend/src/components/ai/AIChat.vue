@@ -1,105 +1,82 @@
 <script setup>
-import AIMascot from './AIMascot.vue'
+import { useRouter } from 'vue-router'
+
+import logoImg from '@/assets/images/logo/logo.png'
+import userIcon from '@/assets/images/ai/user-icon.png' 
+import aiIcon from '@/assets/images/ai/ai-icon.png'     
+
+const router = useRouter()
+
+const goToAI = () => {
+  router.push('/ai-assistant')
+}
 </script>
 
 <template>
-
   <section class="ai-section">
 
-    <!-- ================================= -->
-    <!-- TOP LINE -->
-    <!-- ================================= -->
-
-    <div class="ai-line-top"></div>
+    <div class="ai-line-top animate-on-scroll"></div>
 
     <div class="ai-container">
 
-      <!-- ================================= -->
-      <!-- LEFT -->
-      <!-- ================================= -->
-
-      <div class="ai-left">
-
-        <!-- BRAND -->
-        <div class="ai-mini-brand">
-
-          <div class="mini-brand-circle">
-            🍃
+      <div class="ai-left animate-on-scroll" style="transition-delay: 100ms;">
+        
+        <div class="ai-text-content">
+          <div class="ai-mini-brand">
+            <img :src="logoImg" alt="MySawah" class="mini-brand-logo" />
+            <span>MySawah</span>
           </div>
 
-          <span>
-            MySawah
-          </span>
+          <h2 class="ai-title">
+            AI Assistant<br>MySawah
+          </h2>
 
+          <p class="ai-description">
+            Tanyakan masalah pertanian anda,<br>
+            AI kami siap memberikan rekomendasi terbaik.
+          </p>
         </div>
 
-        <!-- TITLE -->
-        <h2 class="ai-title">
-          AI Assistant
-          MySawah
-        </h2>
-
-        <!-- DESC -->
-        <p class="ai-description">
-          Berikan data dalam pertanian anda,
-          AI Assistant kami siap memberikan rekomendasi 
-          tanaman utama dan pendamping terbaik untuk lahan Anda.
-        </p>
-
-        <!-- BUTTON -->
-        <button class="btn-primary">
-          Coba Sekarang
-        </button>
+        <div class="ai-btn-wrapper">
+          <button @click="goToAI" class="btn-primary ai-btn">
+            Coba Sekarang
+          </button>
+        </div>
 
       </div>
 
-      <!-- ================================= -->
-      <!-- RIGHT -->
-      <!-- ================================= -->
-
       <div class="ai-right">
 
-        <!-- CHAT TOP -->
-        <div class="chat-green">
-
-          Hallo AI MySawah, Berikut ini adalah data saya:
-          5,2. 0.11, 0.14, 20, 0.056, 22, 76
-
+        <div class="chat-user-box animate-on-scroll floating-animation" style="transition-delay: 300ms;">
+          
+          <div class="chat-avatar-user">
+            <img :src="userIcon" alt="User" class="avatar-img" />
+          </div>
+          
+          <p>Hallo AI MySawah, Berikut ini adalah data saya:
+            5,2. 0.11, 0.14, 20, 0.056, 22, 76</p>
         </div>
 
-        <!-- CHAT WHITE -->
-        <div class="chat-white">
+        <div class="chat-ai-box animate-on-scroll floating-animation-delayed" style="transition-delay: 600ms;">
+          
+          <div class="chat-avatar-ai">
+            <img :src="aiIcon" alt="AI" class="avatar-img" />
+          </div>
 
           <p>
             Dari beberapa data kandungan, kelembapan, pH dan Curah Hujan yang telah
             Anda masukkan, Tanaman utama yang direkomendasikan 
-            berdasarkan data tanah Anda adalah kacang merah
+            berdasarkan data tanah Anda adalah <strong> kacang merah </strong> 
           </p>
 
           <div class="chat-list">
-
-            <h4>
-              Dan dari hasil rekomendasi tanaman utama, 
-              beberapa tanaman pendamping yang cocok adalah:
-            </h4>
-
+            <h4>Berikut adalah beberapa langkah yang bisa Anda terapkan:</h4>
             <ol>
-              <li>Jagung</li>
-              <li>Padi</li>
-              <li>Cabai</li>
+              <li>Berikan pupuk urea pada area sekitar akar</li>
+              <li>Pastikan irigasi atau pengairan lahan cukup</li>
+              <li>Cek kondisi hama secara berkala</li>
             </ol>
-
           </div>
-
-        </div>
-
-        <!-- ================================= -->
-        <!-- AI MASCOT -->
-        <!-- ================================= -->
-
-        <div class="ai-mascot-position">
-
-          <AIMascot />
 
         </div>
 
@@ -107,12 +84,7 @@ import AIMascot from './AIMascot.vue'
 
     </div>
 
-    <!-- ================================= -->
-    <!-- BOTTOM LINE -->
-    <!-- ================================= -->
-
-    <div class="ai-line-bottom"></div>
+    <div class="ai-line-bottom animate-on-scroll" style="transition-delay: 800ms;"></div>
 
   </section>
-
 </template>
