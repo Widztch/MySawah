@@ -1,0 +1,284 @@
+.page-title {
+    margin: 0 0 24px;
+    color: #222;
+}
+
+.status-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.tab-btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #d1d5db;
+    background: white;
+    color: #555;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: #5c814d;
+    color: white;
+    border-color: #5c814d;
+}
+
+/* =====================================
+   DATA TABLE (GARIS DIPERJELAS)
+===================================== */
+.table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    overflow: hidden;
+    border: 1px solid #d1d5db;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Menambahkan border penuh agar garis tabel terlihat kotak-kotak rapi */
+.data-table td,
+.data-table th {
+    padding: 16px;
+    text-align: left;
+    border: 1px solid #e2e8f0;
+    font-size: 14px;
+}
+
+/* Garis bawah header dibuat lebih tebal sebagai pembatas utama */
+.data-table th {
+    background: #f8fafc;
+    color: #333;
+    font-weight: 600;
+    border-bottom: 2px solid #cbd5e1;
+}
+
+.text-price {
+    font-weight: 700;
+    color: #222;
+}
+.text-center {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+}
+
+/* =====================================
+   BADGES STATUS ORDER
+===================================== */
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-block;
+}
+.status-badge.pending {
+    background: #fff3e0;
+    color: #ef6c00;
+}
+.status-badge.paid {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+.status-badge.processed {
+    background: #e1f5fe;
+    color: #0277bd;
+}
+.status-badge.shipped {
+    background: #f3e5f5;
+    color: #283593;
+}
+.status-badge.completed {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #2e7d32;
+}
+
+/* =====================================
+   FORM & BUTTONS
+===================================== */
+.status-select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    background: white;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.btn-view-items {
+    background: #f5f5f2;
+    border: 1px solid #d1d5db;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s;
+}
+
+.btn-view-items:hover {
+    background: #e5e5e0;
+}
+
+.eye-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+/* =====================================
+   PAGINASI
+===================================== */
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+.btn-page {
+    padding: 8px 16px;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.btn-page:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.page-info {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* =====================================
+   MODAL DETAIL POPUP
+===================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal-card {
+    background: white;
+    width: 100%;
+    max-width: 550px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+.modal-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+}
+.modal-body {
+    padding: 24px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+.item-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f5f5f2;
+    margin-bottom: 16px;
+}
+.item-row:last-child {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+.item-img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 6px;
+    background: #fafafa;
+}
+.item-info {
+    flex: 1;
+}
+.item-info h4 {
+    margin: 0 0 4px;
+    font-size: 14px;
+    color: #222;
+}
+.item-info p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+}
+.item-total {
+    font-weight: 700;
+    color: #5c814d;
+    font-size: 14px;
+}
+.modal-footer {
+    padding: 16px 24px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: flex-end;
+}
+.btn-primary {
+    background: #5c814d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s;
+}
+.btn-primary:hover {
+    background: #4a6b3d;
+}
+
+.animate-fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

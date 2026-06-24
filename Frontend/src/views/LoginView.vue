@@ -2,28 +2,34 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '../stores/authStore' 
+import { useToastStore } from '@/stores/toastStore'
 
 const router = useRouter()
 const authStore = useAuthStore()
-
+const toastStore = useToastStore()
 const email = ref('')
 const password = ref('')
 const showPassword = ref(false)
+const isLoading = ref(false)
 
 const togglePassword = () => {
   showPassword.value = !showPassword.value
 }
 
 const handleLogin = async () => {
-  // Panggil fungsi login dari Pinia
-  const success = await authStore.login(email.value, password.value)
+  isLoading.value = true
   
-  if (success) {
-    alert('Login Berhasil')
-    router.push('/') // Redirect ke halaman utama
-  } else {
-    // Tampilkan error dari backend
-    alert(authStore.error) 
+  try {
+    const success = await authStore.login(email.value, password.value)
+    
+    if (success) {
+      toastStore.showToast('✅ Login Berhasil! Selamat datang.')
+      router.push('/') 
+    } else {
+      toastStore.showToast('❌ ' + (authStore.error || 'Login gagal.')) 
+    }
+  } finally {
+    isLoading.value = false
   }
 }
 </script>
@@ -33,13 +39,26 @@ const handleLogin = async () => {
     <div class="login-card">
       
       <div class="login-left">
-        <img src="https://images.unsplash.com/photo-1586771107565-961ce6821873?q=80&w=1000&auto=format&fit=crop" alt="Background">
+        <img src="../assets/images/loreg/Loreg.png" alt="Background">
         <div class="login-overlay">
-          <h1>MySawah</h1>
+          
+          <div class="brand-wrapper">
+            <img src="../assets/images/logo/logo.png" alt="Logo" class="overlay-logo" />
+            <h1 class="brand-text">MySawah</h1>
+          </div>
+
         </div>
       </div>
 
       <div class="login-right">
+        
+        <router-link to="/" class="btn-back-home" title="Kembali ke Beranda">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="back-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+          Kembali
+        </router-link>
+
         <div class="login-header">
           <h2>Selamat Datang Kembali</h2>
           <p>Masuk untuk melanjutkan</p>
@@ -67,11 +86,16 @@ const handleLogin = async () => {
             <a href="#" class="forgot-password">Lupa Password?</a>
           </div>
 
-          <button type="submit" class="btn-login">Masuk</button>
+          <button type="submit" class="btn-login" :disabled="isLoading">
+            <span v-if="isLoading" class="btn-content-loading">
+              <span class="spinner-icon"></span> Masuk...
+            </span>
+            <span v-else>Masuk</span>
+          </button>
         </form>
 
         <div class="login-footer">
-          Belum punya akun? <a href="#">Daftar sekarang</a>
+          Belum punya akun? <router-link to="/register">Daftar sekarang</router-link>
         </div>
       </div>
       

@@ -1,14 +1,52 @@
 @import "tailwindcss";
 
-@import './sections/hero.css';
-@import './sections/features.css';
-@import './sections/products.css';
+/* Admin */
+@import './layout/admin-layout.css';
+@import './views/admin/admin-dashboard.css';
+@import './views/admin/admin-products.css';
+@import './views/admin/admin-orders.css';
+
+/* User */
+@import './views/auth/user-profile.css';
+
+/* Auth */
+@import './views/auth/login.css';
+@import './views/auth/register.css';
+
+/* Home */
+@import './components/product-list.css';
+@import './views/ai/ai-chat.css';
+@import './views/about/about-stats.css';
+@import './views/home/hero.css';
+
+/* Product */
+@import './views/product/products.css';
 @import './components/product-card.css';
-@import './components/navbar.css';
-@import './sections/login.css';
-@import './sections/register.css';
-@import './sections/ai-assistant.css';
-@import './sections/about.css';
+@import './views/product/product-detail.css';
+
+/* Section/component */
+@import './layout/navbar.css';
+@import './components/loading.css';
+@import './components/confirm-modal.css';
+@import './components/toast.css';
+@import './layout/footer.css';
+@import './views/notfound/not-found.css';
+
+/* History */
+@import './views/history/history-view.css';
+
+/* Cart */
+@import './views/product/cart.css';
+
+/* Ai */
+@import './layout/ai-layout.css';
+@import './views/ai/AIPrediksiJagung.css';
+@import './views/ai/AITanamanPendamping.css';
+@import './views/ai/AIRekomendasiLahan.css';
+
+/* about */
+@import './views/about/about-view.css';
+
 
 body {
   margin: 0;

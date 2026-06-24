@@ -2,15 +2,17 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '../stores/authStore'
+import { useToastStore } from '@/stores/toastStore'
 
 const router = useRouter()
 const authStore = useAuthStore()
+const toastStore = useToastStore()
 
 const fullName = ref('')
 const email = ref('')
 const password = ref('')
 const confirmPassword = ref('') 
-
+const isLoading = ref(false)
 const showPassword = ref(false)
 const showConfirmPassword = ref(false)
 
@@ -23,18 +25,21 @@ const toggleConfirmPassword = () => {
 
 const handleRegister = async () => {
   if (password.value !== confirmPassword.value) {
-    alert('Password dan Konfirmasi Password tidak cocok!');
-    return;
+    toastStore.showToast('⚠️ Password dan Konfirmasi Password tidak cocok!');
+    return; 
   }
+  isLoading.value = true;
 
-  // Panggil fungsi register menggunakan Pinia
-  const success = await authStore.register(fullName.value, email.value, password.value)
-  
-  if (success) {
-    alert('Registrasi Berhasil!')
-    router.push('/') // Redirect ke halaman utama
-  } else {
-    alert(authStore.error)
+  try {
+    const success = await authStore.register(fullName.value, email.value, password.value);
+    if (success) {
+      toastStore.showToast('✅ Registrasi Berhasil! Selamat datang di MySawah.');
+      router.push('/');
+    } else {
+      toastStore.showToast('❌ ' + (authStore.error || 'Terjadi kesalahan saat registrasi.'));
+    }
+  } finally {
+    isLoading.value = false;
   }
 }
 </script>
@@ -44,13 +49,25 @@ const handleRegister = async () => {
     <div class="register-card">
       
       <div class="register-left">
-        <img src="https://images.unsplash.com/photo-1586771107565-961ce6821873?q=80&w=1000&auto=format&fit=crop" alt="Background">
+        <img src="../assets/images/loreg/Loreg.png" alt="Background">
         <div class="register-overlay">
-          <h1>MySawah</h1>
+
+          <div class="brand-wrapper">
+            <img src="../assets/images/logo/logo.png" alt="Logo" class="overlay-logo" />
+            <h1 class="brand-text">MySawah</h1>
+          </div>
+          
         </div>
       </div>
 
       <div class="register-right">
+        <router-link to="/" class="btn-back-home" title="Kembali ke Beranda">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="back-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+          Kembali
+        </router-link>
+
         <div class="register-header">
           <h2>Buat Akun Baru</h2>
           <p>Daftar untuk memulai menggunakan MySawah</p>
@@ -94,7 +111,12 @@ const handleRegister = async () => {
             </div>
           </div>
 
-          <button type="submit" class="btn-register">Daftar</button>
+          <button type="submit" class="btn-register" :disabled="isLoading">
+            <span v-if="isLoading" class="btn-content-loading">
+              <span class="spinner-icon"></span>
+            </span>
+            <span v-else>Daftar Akun</span>
+          </button>
         </form>
 
         <div class="register-footer">
