@@ -13,6 +13,7 @@ import AdminLayout from '../components/layout/AdminLayout.vue'
 import AdminDashboard from '../views/admin/AdminDashboard.vue'
 import AdminProducts from '../views/admin/AdminProducts.vue'
 import AdminOrders from '../views/admin/AdminOrders.vue'
+import AILayout from '../components/layout/AILayout.vue'
 
 
 const router = createRouter({
@@ -80,7 +81,13 @@ const router = createRouter({
           path: 'orders',
           name: 'admin-orders',
           component: AdminOrders
-        }
+        },
+      ]
+    },
+    {
+      path: '/ai-assistant',
+      component: AILayout,
+      children: [
       ]
     },
   ]

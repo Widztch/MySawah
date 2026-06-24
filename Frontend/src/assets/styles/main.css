@@ -37,6 +37,7 @@
 @import './views/product/cart.css';
 
 /* Ai */
+@import './layout/ai-layout.css';
 
 /* about */
 @import './views/about/about-view.css';
