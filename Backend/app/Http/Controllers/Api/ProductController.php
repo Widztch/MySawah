@@ -22,7 +22,7 @@ class ProductController extends Controller
         $query->latest('id_produk');
 
         // 4. Eksekusi query dengan pagination (10 data per halaman)
-        $products = $query->paginate(10); 
+        $products = $query->paginate(12); 
 
         return response()->json([
             'status' => 'success',
