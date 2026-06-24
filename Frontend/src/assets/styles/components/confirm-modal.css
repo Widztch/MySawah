@@ -1,0 +1,86 @@
+.confirm-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4); /* Gelap transparan */
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999; /* di atas segalanya termasuk loading screen */
+  }
+  
+  .confirm-card {
+    background: white;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 16px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    animation: confirmPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  @keyframes confirmPop {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  .confirm-header {
+    padding: 20px 24px 10px 24px;
+  }
+  
+  .confirm-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #222;
+    font-weight: 700;
+  }
+  
+  .confirm-body {
+    padding: 0 24px 24px 24px;
+  }
+  
+  .confirm-body p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  .confirm-footer {
+    padding: 16px 24px;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    border-top: 1px solid #f0f0f0;
+  }
+  
+  .btn-confirm-cancel, .btn-confirm-accept {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+  }
+  
+  .btn-confirm-cancel {
+    background: white;
+    border: 1px solid #d1d5db;
+    color: #444;
+  }
+  .btn-confirm-cancel:hover {
+    background: #f3f4f6;
+  }
+  
+  .btn-confirm-accept {
+    background: #5c814d; /* Tema Hijau MySawah */
+    color: white;
+  }
+  .btn-confirm-accept:hover {
+    background: #47653b;
+  }

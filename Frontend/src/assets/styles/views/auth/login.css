@@ -1,0 +1,249 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f2;
+  padding: 24px;
+}
+
+.login-card {
+  display: flex;
+  background: white;
+  width: 100%;
+  max-width: 900px;
+  min-height: 673px; 
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+
+.login-left {
+  flex: 0.65; 
+  position: relative;
+}
+
+.login-left img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center;
+}
+
+.login-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =====================================
+   BRANDING LOGO & TEKS (OVERLAY)
+===================================== */
+.brand-wrapper {
+  position: absolute;
+  left: 50px;
+  right: 30px; 
+  top: 150px;
+  
+  display: flex !important;
+  flex-direction: row !important; 
+  align-items: center !important; 
+  gap: 15px !important; 
+}
+
+.overlay-logo {
+  width: 50px !important; 
+  height: auto !important;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+  position: relative !important; 
+  display: block !important;
+}
+
+.brand-text {
+  color: white;
+  font-size: 33px;
+  font-weight: 550;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  margin: 0 !important;
+  position: relative !important; 
+  display: block !important;
+}
+
+/* =====================================
+   BAGIAN KANAN (FORM)
+===================================== */
+.login-right {
+  flex: 1.2;
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative; 
+}
+
+/* GAYA TOMBOL KEMBALI */
+.btn-back-home {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #5c814d;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.back-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.btn-back-home:hover {
+  background-color: #f0fdf4;
+  color: #47653b;
+}
+
+.login-header h2 {
+  font-size: 26px; 
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 8px;
+}
+
+.login-header p {
+  color: #5c814d;
+  font-size: 14px;
+  margin: 0 0 35px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #a3a3a3; 
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.input-wrapper input:focus {
+  border-color: #5c814d;
+}
+
+.input-wrapper input::placeholder {
+  color: #5c814d;
+  opacity: 0.8; 
+}
+
+.icon-eye {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+  width: 20px;
+  height: 20px;
+}
+
+.forgot-password {
+  display: block;
+  text-align: right;
+  font-size: 13px;
+  color: #5c814d;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.forgot-password:hover {
+  color: #47653b;
+}
+
+.btn-login {
+  width: 100%;
+  margin-top: 10px;
+  padding: 13px;
+  border-radius: 10px;
+  background: #5c814d; 
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background: #47653b;
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 14px;
+  color: #5c814d;
+}
+
+.btn-content-loading {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.spinner-icon {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+button[type="submit"]:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.login-footer a {
+  color: #5c814d;
+  font-weight: 600;
+  text-decoration: none;
+}

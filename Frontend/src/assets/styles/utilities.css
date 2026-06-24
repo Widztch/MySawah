@@ -1,0 +1,23 @@
+.home-page {
+  background: #f5f5f2;
+  min-height: 100vh;
+}
+
+.btn-primary {
+  background: #5c814d;
+  color: white;
+  padding: 16px 34px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #47653b;
+}
+
+.btn-outline {
+  border: 1px solid #5c814d;
+  color: #5c814d;
+  padding: 16px 34px;
+  border-radius: 12px;
+}
