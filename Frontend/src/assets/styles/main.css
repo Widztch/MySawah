@@ -29,6 +29,7 @@
 @import './components/confirm-modal.css';
 @import './components/toast.css';
 @import './layout/footer.css';
+@import './views/notfound/not-found.css';
 
 /* History */
 @import './views/history/history-view.css';

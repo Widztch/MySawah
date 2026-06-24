@@ -17,6 +17,7 @@ import AILayout from '../components/layout/AILayout.vue'
 import AIPrediksiJagung from '../views/ai/AIPrediksiJagung.vue'
 import AITanamanPendamping from '../views/ai/AITanamanPendamping.vue'
 import AIRekomendasiLahan from '../views/ai/AIRekomendasiLahan.vue'
+import NotFoundView from '../views/NotFoundView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -108,6 +109,11 @@ const router = createRouter({
         }
       ]
     },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: NotFoundView
+    },
   ]
 })
 
@@ -153,7 +159,7 @@ router.beforeEach(async (to, from, next) => {
     if (to.meta.requiresAdmin && !profileStore.isAdmin) {
       // Jika bukan admin, Kirim ke halaman 404 NotFound seolah-olah agar halamannya tidak ada
       return next({ 
-        name: 'login', 
+        name: 'not-found', 
         params: { pathMatch: to.path.substring(1).split('/') } 
       })
     }
