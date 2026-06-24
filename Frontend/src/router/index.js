@@ -14,7 +14,7 @@ import AdminDashboard from '../views/admin/AdminDashboard.vue'
 import AdminProducts from '../views/admin/AdminProducts.vue'
 import AdminOrders from '../views/admin/AdminOrders.vue'
 import AILayout from '../components/layout/AILayout.vue'
-
+import AIPrediksiJagung from '../views/ai/AIPrediksiJagung.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -87,7 +87,13 @@ const router = createRouter({
     {
       path: '/ai-assistant',
       component: AILayout,
+      redirect: '/ai-assistant/prediksi-jagung', 
       children: [
+        {
+          path: 'prediksi-jagung',
+          name: 'AIPrediksiJagung',
+          component: AIPrediksiJagung
+        },
       ]
     },
   ]
