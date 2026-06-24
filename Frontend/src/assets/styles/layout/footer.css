@@ -107,7 +107,6 @@
   }
   
   .social-link:hover {
-    background-color: #5c814d;
     color: #ffffff;
     transform: translateY(-3px);
   }
