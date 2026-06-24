@@ -1,16 +1,8 @@
 <template>
-
   <div class="home-page">
-
-    <!-- ================================= -->
-    <!-- NAVBAR -->
-    <!-- ================================= -->
 
     <Navbar />
 
-    <!-- ================================= -->
-    <!-- HERO SECTION -->
-    <!-- ================================= -->
     <section 
       class="hero-section animate-on-scroll" 
       :style="{ backgroundImage: `url(${heroBgImage})` }"
@@ -29,8 +21,8 @@
             untuk mendukung petani indonesia
           </p>
           <div class="hero-buttons">
-            <button class="btn-primary">Mulai Sekarang</button>
-            <button class="btn-secondary">Jelajahi Produk</button>
+            <button class="btn-primary" @click="handleStartNow">Mulai Sekarang</button>
+            <button class="btn-secondary" @click="handleExploreProducts">Jelajahi Produk</button>
           </div>
         </div>
       </div>
@@ -74,30 +66,20 @@
       </div>
     </section>
 
-<!-- ================================= -->
-<!-- PRODUCTS -->
-<!-- ================================= -->
-
 <ProductList />
 
-<!-- ================================= -->
-<!-- AI ASSISTANT -->
-<!-- ================================= -->
-
 <AIChat />
-
-<!-- ================================= -->
-<!-- ABOUT -->
-<!-- ================================= -->
 
 <AboutStats />
 
   </div>
-
 </template>
 
 <script setup>
 import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { useProfileStore } from '@/stores/profileStore' // Store untuk cek login
+
 import heroBgImage from '../assets/images/home/bg.png'
 import Navbar from '@/components/layout/Navbar.vue'
 import ProductList from '@/components/product/ProductList.vue'
@@ -109,20 +91,37 @@ import iconAi from '@/assets/images/home/icon-ai.png'
 import iconDelivery from '@/assets/images/home/icon-delivery.png'
 import iconFarmer from '@/assets/images/home/icon-farmer.png'
 
+const router = useRouter()
+const profileStore = useProfileStore()
+
+// --- FUNGSI NAVIGASI TOMBOL ---
+const handleStartNow = () => {
+  // Jika pengguna sudah login, arahkan ke halaman AI
+  if (profileStore.isLoggedIn) {
+    router.push('/ai-assistant') 
+  } else {
+    // Jika belum login, arahkan ke halaman Login
+    router.push('/login') 
+  }
+}
+
+const handleExploreProducts = () => {
+  // Langsung arahkan ke halaman Produk
+  router.push('/produk')
+}
+
 // --- ANIMASI SCROLL ---
 onMounted(() => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Jika elemen masuk ke layar, tambahkan class 'show'
         entry.target.classList.add('show')
       } else {
-        // Jika elemen keluar layar, hapus class 'show'
         entry.target.classList.remove('show')
       }
     })
   }, {
-    threshold: 0.1 // Animasi mulai saat 10% bagian elemen sudah terlihat
+    threshold: 0.1 
   })
 
   const hiddenElements = document.querySelectorAll('.animate-on-scroll')
