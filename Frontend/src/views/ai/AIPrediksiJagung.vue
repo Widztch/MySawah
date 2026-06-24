@@ -72,7 +72,7 @@ const analyzeImage = async () => {
     <div class="ai-header animate-fade-up">
       <h1>
         <img :src="cornIcon" class="title-icon">
-        AI Dokter Jagung
+        AI Penyakit Daun Jagung
       </h1>
       <p>Unggah foto daun jagung Anda, dan kecerdasan buatan kami akan mendeteksi apakah tanaman tersebut sehat atau terjangkit penyakit.</p>
     </div>
