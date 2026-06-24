@@ -1,0 +1,190 @@
+.home-page {
+  min-height: 100vh;
+  background: #f5f5f2;
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 600px; /* Anda bisa memperbesar/memperkecil angka ini untuk mengubah tinggi gambar */
+  
+  /* Pastikan nama gambar sesuai dengan yang Anda siapkan */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+/* Gradasi gelap dari kiri agar teks terbaca sempurna */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0.8) 0%, 
+    rgba(0, 0, 0, 0.4) 60%, 
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  z-index: 1;
+}
+
+/* Memastikan tulisan ada di atas overlay gelap */
+.hero-container {
+  position: relative;
+  z-index: 2; 
+  max-width: 1280px;
+  width: 100%;
+  margin: auto;
+  padding: 0 24px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.hero-description {
+  color: #f1f1f1;
+  line-height: 1.6;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+/* Tombol Hijau */
+.btn-primary {
+  background: #5d844c;
+  color: white;
+  border: 1px solid #5d844c;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #4a6b3d;
+}
+
+/* Tombol Putih */
+.btn-secondary {
+  background: #ffffff;
+  color: #5d844c;
+  border: 1px solid #ffffff;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: #f0f0f0;
+}
+
+/* =====================================
+   FEATURES SECTION
+===================================== */
+.features-section {
+  max-width: 1280px;
+  margin: 0 auto 80px;
+  padding: 0 24px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  border: 2px solid #eaeaea;
+  
+  /* Persiapan transisi yang halus */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.feature-item:hover {
+  transform: translateY(-8px); /* Mengambang ke atas */
+  box-shadow: 0 16px 30px rgba(92, 129, 77, 0.15); /* Bayangan hijau estetik MySawah */
+  border-color: #a0c78f; /* Warna garis ikut berubah agak kehijauan */
+}
+
+/* Pengaturan khusus untuk gambar ikon */
+.custom-icon {
+  width: 100px; 
+  height: 100px; 
+  object-fit: contain; /* Memastikan gambar tidak gepeng */
+}
+
+.feature-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.feature-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* =====================================
+   LOGIKA ANIMASI SCROLL (MASUK & KELUAR)
+===================================== */
+
+/* Kondisi AWAL: Elemen tersembunyi dan terdorong ke bawah */
+.animate-on-scroll {
+  opacity: 0;
+  filter: blur(5px); /* Memberikan efek blur tipis saat belum muncul */
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+/* Kondisi AKTIF: Elemen terlihat saat masuk layar (otomatis ditambah JS) */
+.animate-on-scroll.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+/* Animasi khusus awal muat untuk tulisan Hero agar langsung muncul manis */
+.hero-content {
+  animation: fadeUpHero 1s ease-out forwards;
+}
+
+@keyframes fadeUpHero {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,165 @@
+.products-section {
+    background-color: #5c814d;
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .products-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  
+  /* Header Section */
+  .products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+  }
+  
+  .section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ffffff;
+    color: #222;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  
+  .badge-logo {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+  }
+  
+  .products-title {
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  /* Tombol Slider Kanan Atas */
+  .slider-buttons {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .slider-button {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: #ffffff;
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+  }
+  
+  .slider-button:hover {
+    background: rgba(255, 255, 255, 1);
+    border-color: #ffffff;
+    transform: scale(1.05); 
+  }
+  
+  /* =========================================
+     TRACK SLIDER UNTUK PRODUK
+  ========================================= */
+  .products-slider-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  .products-track {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto; 
+    scroll-behavior: smooth; /* Efek geser */
+    padding-bottom: 20px; /* bayangan kartu */
+    
+    /* Menyembunyikan scrollbar bawaan browser */
+    scrollbar-width: none; 
+  }
+  
+  .products-track::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Memastikan ukuran kartu tetap konsisten saat berbaris panjang */
+  .products-track > * {
+    flex: 0 0 auto;
+    width: 240px; 
+  }
+  
+  /* ========================================= */
+  
+  .view-all-wrapper {
+    display: flex;
+    justify-content: flex-end; 
+    margin-top: 40px;
+  }
+  
+  .btn-view-all {
+    background-color: #ffffff;
+    color: #5c814d;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .btn-view-all:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-2px);
+  }
+
+  /* =========================================
+    TRACK SLIDER UNTUK PRODUK
+    ========================================= */
+    .products-slider-wrapper {
+        position: relative;
+        width: 100%;
+    }
+    
+    .products-track {
+        display: flex;
+        gap: 24px;
+        overflow-x: auto;
+        scroll-behavior: smooth; 
+        padding-bottom: 24px; /* Ruang bernapas di bawah untuk bayangan */
+        
+        scrollbar-width: none; 
+    }
+    
+    .products-track::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* persis 5 kartu pas di layar tanpa terpotong */
+    .products-track > * {
+        flex: 0 0 auto;
+        /* Lebar kartu = (100% total lebar - 4 kali jarak gap) dibagi 5 kartu */
+        width: calc((100% - (24px * 4)) / 5); 
+        min-width: 200px;
+        
+        /* Transisi efek animasi slider */
+        transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease; 
+    }
+    
+    /* EFEK ANIMASI MELUNCUR SAAT TOMBOL DIKLIK */
+    .products-track.is-sliding > * {
+        transform: scale(0.95); /* Mengecil sekitar 5% saat meluncur */
+        opacity: 0.8; /* Sedikit memudar membiaskan fokus mata */
+    }
