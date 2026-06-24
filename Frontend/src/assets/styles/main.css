@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
 /* Admin */
-
+@import './layout/admin-layout.css';
+@import './views/admin/admin-dashboard.css';
+@import './views/admin/admin-products.css';
+@import './views/admin/admin-orders.css';
 
 /* User */
 @import './views/auth/user-profile.css';
@@ -34,6 +37,10 @@
 @import './views/product/cart.css';
 
 /* Ai */
+@import './layout/ai-layout.css';
+@import './views/ai/AIPrediksiJagung.css';
+@import './views/ai/AITanamanPendamping.css';
+@import './views/ai/AIRekomendasiLahan.css';
 
 /* about */
 @import './views/about/about-view.css';

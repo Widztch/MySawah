@@ -1,0 +1,320 @@
+.ai-page-wrapper {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 24px;
+}
+
+.ai-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ai-header h1 {
+    font-size: 32px;
+    color: #222;
+    margin-bottom: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.ai-header p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.title-icon {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+.upload-icon {
+    width: 55px;
+    height: 55px;
+    display: block;
+    margin: 0 auto 16px;
+}
+
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.stat-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.ai-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border: 1px solid #f0f0f0;
+}
+
+/* AREA UPLOAD GAMBAR */
+.upload-zone {
+    border: 2px dashed #cbd5e1;
+    border-radius: 16px;
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.upload-zone.drag-active,
+.upload-zone:hover {
+    border-color: #5c814d;
+    background-color: #f0fdf4;
+}
+
+.upload-icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+    display: block;
+}
+.upload-text {
+    color: #475569;
+    font-weight: 500;
+    margin: 0 0 8px;
+}
+.upload-subtext {
+    color: #94a3b8;
+    font-size: 13px;
+    margin: 0;
+}
+.hidden-input {
+    display: none;
+}
+
+/* PREVIEW GAMBAR */
+.preview-container {
+    position: relative;
+    width: 100%;
+    max-height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.preview-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+.btn-remove-image {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #ef4444;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: 0.2s;
+}
+.btn-remove-image:hover {
+    background: #ef4444;
+    color: white;
+}
+
+/* FORM PILIH MODEL & TOMBOL */
+.form-group {
+    margin-bottom: 24px;
+}
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.model-select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+.model-select:focus {
+    border-color: #5c814d;
+}
+
+.btn-predict {
+    width: 100%;
+    background: #5c814d;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-predict:hover:not(:disabled) {
+    background: #4a6b3d;
+}
+.btn-predict:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* KOTAK HASIL PREDIKSI */
+.result-box {
+    margin-top: 30px;
+    padding: 24px;
+    border-radius: 16px;
+    text-align: center;
+    border: 2px solid transparent;
+}
+.result-box h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #666;
+}
+.result-disease {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.result-healthy {
+    background-color: #f0fdf4;
+    border-color: #86efac;
+}
+.result-healthy .result-disease {
+    color: #166534;
+}
+
+.result-sick {
+    background-color: #fef2f2;
+    border-color: #fca5a5;
+}
+.result-sick .result-disease {
+    color: #991b1b;
+}
+
+/* =====================================
+   GAYA TAMBAHAN UNTUK DETAIL HASIL PREDIKSI
+  ===================================== */
+.result-label {
+    margin: 0 0 12px;
+    font-size: 16px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.original-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #777;
+}
+
+.ai-stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-badge {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+    border: 1px solid rgba(0,0,0,0.05);
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.treatment-box {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+    border: 1px dashed rgba(0,0,0,0.15);
+    margin-top: 10px;
+}
+
+.treatment-box h4 {
+    margin: 0 0 10px;
+    color: #222;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.treatment-text {
+    margin: 0;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.7;
+    white-space: pre-line;
+}
+
+/* =====================================
+      GAYA UNTUK LOADING DI DALAM TOMBOL
+    ===================================== */
+.btn-content-loading {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.spinner-icon {
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ANIMASI */
+.animate-fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
