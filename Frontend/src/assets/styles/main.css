@@ -22,6 +22,7 @@
 /* Product */
 @import './views/product/products.css';
 @import './components/product-card.css';
+@import './views/product/product-detail.css';
 
 /* Section/component */
 @import './layout/navbar.css';

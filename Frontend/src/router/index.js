@@ -6,6 +6,7 @@ import LoginView from '../views/LoginView.vue'
 import RegisterView from '@/views/RegisterView.vue'
 import AboutView from '@/views/AboutView.vue'
 import ProductView from '@/views/ProductView.vue'
+import ProductDetailView from '@/views/ProductDetailView.vue'
 import CartView from '@/views/user/CartView.vue'
 import HistoryView from '../views/user/HistoryView.vue'
 import UserProfile from '../views/user/UserProfile.vue'
@@ -46,6 +47,11 @@ const router = createRouter({
       path: '/produk',
       name: 'produk',
       component: ProductView
+    },
+    {
+      path: '/produk/:id',
+      name: 'product-detail',
+      component: ProductDetailView
     },
     {
       path: '/keranjang',
