@@ -24,15 +24,15 @@ MySawah adalah platform digital terintegrasi yang menggabungkan ekosistem Agri-C
 ## Tampilan Antarmuka (Screenshots)
 
 **1. Halaman Beranda**
-![Halaman Beranda](Pic\Home.jpg)
+![Halaman Beranda](Pic/Home.jpg)
 *Antarmuka utama yang menyajikan navigasi cepat ke seluruh ekosistem MySawah.*
 
 **2. Modul AI Rekomendasi Lahan**
-![Modul AI](Pic\Ai.jpg)
+![Modul AI](Pic/Ai.jpg)
 *Antarmuka analisis AI yang memberikan hasil deteksi secara langsung.*
 
 **3. Agri-Commerce Marketplace**
-![Marketplace](Pic\Marketplace.jpg)
+![Marketplace](Pic/Marketplace.jpg)
 *Katalog produk pertanian digital.*
 
 ---
